@@ -42,8 +42,9 @@ function g(cookie, index) {
   };
   request(options, function (error, response) {
     if (error) throw new Error(error);
-    console.log(`账号${index}结果为${JSON.parse(response.body
-      ).subCodeMsg}`);
+    await notify.sendNotify(`账号${index}结果为${response.body
+      }`);
+
   });
 }
 
