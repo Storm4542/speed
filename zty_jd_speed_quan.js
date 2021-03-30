@@ -2,6 +2,8 @@
 var request = require('request');
 const $ = new Env('极速版领券');
 
+
+
 const notify = require('./sendNotify');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = require('./jdCookie.js');
