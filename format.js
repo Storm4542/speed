@@ -110,7 +110,6 @@ const exportShareCodes = (str, zhName) => {
 };
 
 function showFormatMsg(shareCodeObj) {
-  console.log(shareCodeObj);
   console.log(
     `\n========== 【格式化互助码 ==========`
   );
