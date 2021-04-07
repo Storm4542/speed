@@ -174,9 +174,9 @@ function showFormatMsg(shareCodeObj) {
         );
       }
    }
-   if(shareCodeObj.Cfd){
+   if(shareCodeObj.Jdcfd){
 
-    const temp = getRandomArrayElements( shareCodeObj.Cfd)
+    const temp = getRandomArrayElements( shareCodeObj.Jdcfd)
       for (let index = 0; index < temp.length; index++) {
         console.log(
           `/submit_activity_codes jxcfd ${temp[index].join("&")}\n`
