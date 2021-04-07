@@ -111,7 +111,7 @@ const exportShareCodes = (str, zhName) => {
 
 function showFormatMsg(shareCodeObj) {
   console.log(
-    `\n========== 【格式化互助码只留随机4-5个(一定有第一个)】 ==========`
+    `\n========== 【格式化互助码 ==========`
   );
   console.log(`\n提交机器人 @Turing Lab Bot\n`);
     if(shareCodeObj.Bean ){
@@ -123,145 +123,96 @@ function showFormatMsg(shareCodeObj) {
       }
     }
    
-   
-  shareCodeObj.Fruit &&
-    console.log(
-      `/submit_activity_codes farm ${getRandomArrayElements(
-        shareCodeObj.Fruit
-      ).join("&")}\n`
-    );
-  shareCodeObj.Pet &&
-    console.log(
-      `/submit_activity_codes pet ${getRandomArrayElements(
-        shareCodeObj.Pet
-      ).join("&")}\n`
-    );
-  shareCodeObj.DreamFactory &&
-    console.log(
-      `/submit_activity_codes jxfactory ${getRandomArrayElements(
-        shareCodeObj.DreamFactory
-      ).join("&")}\n`
-    );
-  shareCodeObj.JdFactory &&
-    console.log(
-      `/submit_activity_codes ddfactory ${getRandomArrayElements(
-        shareCodeObj.JdFactory
-      ).join("&")}\n`
-    );
+   if(shareCodeObj.Fruit){
+
+    const temp = getRandomArrayElements( shareCodeObj.Fruit)
+      for (let index = 0; index < temp.length; index++) {
+        console.log(
+          `/submit_activity_codes farm ${temp[index].join("&")}\n`
+        );
+      }
+   }
+
+   if(shareCodeObj.Pet){
+
+    const temp = getRandomArrayElements( shareCodeObj.Pet)
+      for (let index = 0; index < temp.length; index++) {
+        console.log(
+          `/submit_activity_codes pet ${temp[index].join("&")}\n`
+        );
+      }
+   }
+   if(shareCodeObj.DreamFactory){
+
+    const temp = getRandomArrayElements( shareCodeObj.DreamFactory)
+      for (let index = 0; index < temp.length; index++) {
+        console.log(
+          `/submit_activity_codes jxfactory ${temp[index].join("&")}\n`
+        );
+      }
+   }
+  
+   if(shareCodeObj.JdFactory){
+
+    const temp = getRandomArrayElements( shareCodeObj.JdFactory)
+      for (let index = 0; index < temp.length; index++) {
+        console.log(
+          `/submit_activity_codes ddfactory ${temp[index].join("&")}\n`
+        );
+      }
+   }
+
   // 临时活动
-  shareCodeObj.Sgmh &&
-    console.log(
-      `/submit_activity_codes sgmh ${getRandomArrayElements(
-        shareCodeObj.Sgmh
-      ).join("&")}\n`
-    );
-  shareCodeObj.Cfd &&
-    console.log(
-      `/submit_activity_codes jxcfd ${getRandomArrayElements(
-        shareCodeObj.Cfd
-      ).join("&")}\n`
-    );
 
+  if(shareCodeObj.Sgmh){
+
+    const temp = getRandomArrayElements( shareCodeObj.Sgmh)
+      for (let index = 0; index < temp.length; index++) {
+        console.log(
+          `/submit_activity_codes sgmh ${temp[index].join("&")}\n`
+        );
+      }
+   }
+   if(shareCodeObj.Cfd){
+
+    const temp = getRandomArrayElements( shareCodeObj.Cfd)
+      for (let index = 0; index < temp.length; index++) {
+        console.log(
+          `/submit_activity_codes jxcfd ${temp[index].join("&")}\n`
+        );
+      }
+   }
+ 
   console.log(`\n提交机器人 @Commit Code Bot\n`);
-  shareCodeObj.Cash &&
-    console.log(
-      `/jdcash ${getRandomArrayElements(shareCodeObj.Cash).join("&")}\n`
-    );
-  shareCodeObj.Joy &&
-    console.log(
-      `/jdcrazyjoy ${getRandomArrayElements(shareCodeObj.Joy).join("&")}\n`
-    );
-  shareCodeObj.Jdzz &&
-    console.log(
-      `/jdzz ${getRandomArrayElements(shareCodeObj.Jdzz).join("&")}\n`
-    );
+  if(shareCodeObj.Cash){
 
-  console.log(`\n========== 【格式化互助码for docker ==========`);
-  shareCodeObj.Bean &&
-    formatShareCodesForLinux(
-      shareCodeObj.Bean,
-      "种豆得豆",
-      "MyBean",
-      "ForOtherBean"
-    );
-  shareCodeObj.Fruit &&
-    formatShareCodesForLinux(
-      shareCodeObj.Fruit,
-      "东东农场",
-      "MyFruit",
-      "ForOtherFruit"
-    );
-  shareCodeObj.Pet &&
-    formatShareCodesForLinux(
-      shareCodeObj.Pet,
-      "东东萌宠",
-      "MyPet",
-      "ForOtherPet"
-    );
-  shareCodeObj.Jxnc &&
-    formatShareCodesForLinux(
-      shareCodeObj.Jxnc,
-      "京喜农场",
-      "MyJxnc",
-      "ForOtherJxnc",
-      "'"
-    );
-  shareCodeObj.DreamFactory &&
-    formatShareCodesForLinux(
-      shareCodeObj.DreamFactory,
-      "京喜工厂",
-      "MyDreamFactory",
-      "ForOtherDreamFactory"
-    );
-  shareCodeObj.JdFactory &&
-    formatShareCodesForLinux(
-      shareCodeObj.JdFactory,
-      "东东工厂",
-      "MyJdFactory",
-      "ForOtherJdFactory"
-    );
-  shareCodeObj.Cash &&
-    formatShareCodesForLinux(
-      shareCodeObj.Cash,
-      "签到领现金",
-      "MyCash",
-      "ForOtherCash"
-    );
-  shareCodeObj.Joy &&
-    formatShareCodesForLinux(
-      shareCodeObj.Joy,
-      "crazy joy",
-      "MyJoy",
-      "ForOtherJoy"
-    );
-  shareCodeObj.Sgmh &&
-    formatShareCodesForLinux(
-      shareCodeObj.Sgmh,
-      "闪购盲盒",
-      "MySgmh",
-      "ForOtherSgmh"
-    );
-  shareCodeObj.Jdcfd &&
-    formatShareCodesForLinux(
-      shareCodeObj.Jdcfd,
-      "京喜财富岛",
-      "MyJdcfd",
-      "ForOtherJdcfd"
-    );
-  // shareCodeObj.Global &&
-  //   formatShareCodesForLinux(
-  //     shareCodeObj.Global,
-  //     "环球挑战赛",
-  //     "MyGlobal",
-  //     "ForOtherGlobal"
-  //   );
-  shareCodeObj.Jdzz &&
-    formatShareCodesForLinux(
-      shareCodeObj.Jdzz,
-      "京东赚赚",
-      "MyJdzz",
-      "ForOtherJdzz"
-    );
+    const temp = getRandomArrayElements( shareCodeObj.Cash)
+      for (let index = 0; index < temp.length; index++) {
+        console.log(
+          `/jdcash ${temp[index].join("&")}\n`
+        );
+      }
+   }
+   if(shareCodeObj.Joy){
+
+    const temp = getRandomArrayElements( shareCodeObj.Joy)
+      for (let index = 0; index < temp.length; index++) {
+        console.log(
+          `/jdcrazyjoy ${temp[index].join("&")}\n`
+        );
+      }
+   }
+   if(shareCodeObj.Jdzz){
+
+    const temp = getRandomArrayElements( shareCodeObj.Jdzz)
+      for (let index = 0; index < temp.length; index++) {
+        console.log(
+          `/jdzz ${temp[index].join("&")}\n`
+        );
+      }
+   }
+
+  
 }
 
 const formatShareCodesForLinux = (
@@ -295,7 +246,6 @@ const formatShareCodesForLinux = (
 
 // 随机区 数组中的 几个元素， 必有 第一个元素
 function getRandomArrayElements(arr = [], count = 4) {
-  console.log(arr);
   if (arr.length <= 5) {
     return arr;
   } else {
